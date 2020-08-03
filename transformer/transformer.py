@@ -95,6 +95,7 @@ class Transformer(Layer):
             ff_out += attention_out
             encoding = LayerNormalization()(ff_out)
 
+
         linear_projection = K.dot(encoding, K.transpose(self.embedding_matrix))
         output = K.softmax(linear_projection)
 
